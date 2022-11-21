@@ -4,7 +4,10 @@ import 'package:test_demo/counter/counter.dart';
 void main() {
   // tearDown(body)
   group("Counter", () {
-    Counter counter = Counter();
+    late Counter counter;
+    setUp(() {
+      counter = Counter();
+    });
     test("Increment", () {
       int value = counter.increment(1);
       expect(value, 2);
